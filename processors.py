@@ -1,6 +1,6 @@
+from datetime import datetime
 import pandas as pd
 import numpy as np
-from datetime import datetime
 
 
 timestamp = datetime.today().strftime('%Y-%m-%d_%H-%M-%S')
@@ -14,7 +14,7 @@ def save_column_statistics(column_statistics, dataframe, file_name):
             + '\nColumns: ' + str(dataframe.columns.tolist()) + '\n')
 
 
-def columns_which_are_only_in_one_file(column_statistics, first_dataframe, second_dataframe):
+def columns_which_are_only_in_one_file(first_dataframe, second_dataframe):
     indexes_only_in_first = get_entries_which_are_only_in_one_file(first_dataframe, second_dataframe)
     indexes_only_in_second = get_entries_which_are_only_in_one_file(second_dataframe, first_dataframe)
 
@@ -46,7 +46,7 @@ def get_entries_which_are_only_in_one_file(first_dataframe, second_dataframe):
         '_merge == "left_only"').drop('_merge', 1))
 
 
-def find_differences_in_values_per_indexes_and_column(column_statistics, first_dataframe, second_dataframe):
+def find_differences_in_values_per_indexes_and_column(first_dataframe, second_dataframe):
     first_dataframe_for_comparison, second_dataframe_for_comparison = get_tables_with_only_overlapping_indexes_and_columns(
         first_dataframe,
         second_dataframe)
