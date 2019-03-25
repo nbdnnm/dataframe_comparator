@@ -1,7 +1,11 @@
 # Description
 This script is comparing two dataframes and produce a short statistic and detailed comparison between them.
 
-python comparison_script.py file1.csv file2.csv
+**Execute**:
+
+pipenv install
+
+pipenv run python comparison_script.py file1.csv file2.csv
 
 **Example**:
 
